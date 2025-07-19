@@ -19,6 +19,7 @@ function App() {
     kidneySize: "",
     pincode: "",
   });
+
   const [patient, setPatient] = useState({
     age: "",
     hla: "",
@@ -27,6 +28,7 @@ function App() {
     pra: "",
     pincode: "",
   });
+
   const [donorSaved, setDonorSaved] = useState(false);
   const [patientSaved, setPatientSaved] = useState(false);
 
@@ -119,42 +121,50 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <h2 className="title">Indian Kidney Exchange Program</h2>
-      <p className="status">{status}</p>
+    <div className="page-background">
+      <div className="container">
+        <h2 className="title">Indian Kidney Exchange Program</h2>
+        <p className="status">{status}</p>
 
-      <div className="form-section">
-        <h3 className="section-heading">Donor Details</h3>
-        <input placeholder="Age" onChange={e => setDonor({ ...donor, age: e.target.value })} />
-        <input placeholder="HLA (comma-separated)" onChange={e => setDonor({ ...donor, hla: e.target.value })} />
-        <input placeholder="Blood Group" onChange={e => setDonor({ ...donor, bloodGroup: e.target.value })} />
-        <input placeholder="Kidney Size" onChange={e => setDonor({ ...donor, kidneySize: e.target.value })} />
-        <input placeholder="Pincode" onChange={e => setDonor({ ...donor, pincode: e.target.value })} />
-        <button onClick={submitDonor} style={{ backgroundColor: donorSaved ? "#4CAF50" : "#1a73e8", color: "#fff" }}>
-          {donorSaved ? "✅ Donor Saved" : "Submit Donor"}
-        </button>
-      </div>
+        <div className="form-section">
+          <h3 className="section-heading">Donor Details</h3>
+          <input placeholder="Age" onChange={e => setDonor({ ...donor, age: e.target.value })} />
+          <input placeholder="HLA (comma-separated)" onChange={e => setDonor({ ...donor, hla: e.target.value })} />
+          <input placeholder="Blood Group" onChange={e => setDonor({ ...donor, bloodGroup: e.target.value })} />
+          <input placeholder="Kidney Size" onChange={e => setDonor({ ...donor, kidneySize: e.target.value })} />
+          <input placeholder="Pincode" onChange={e => setDonor({ ...donor, pincode: e.target.value })} />
+          <button
+            onClick={submitDonor}
+            style={{ backgroundColor: donorSaved ? "#4CAF50" : "#1a73e8", color: "#fff" }}
+          >
+            {donorSaved ? "✅ Donor Saved" : "Submit Donor"}
+          </button>
+        </div>
 
-      <div className="form-section">
-        <h3 className="section-heading">Patient Details</h3>
-        <input placeholder="Age" onChange={e => setPatient({ ...patient, age: e.target.value })} />
-        <input placeholder="HLA (comma-separated)" onChange={e => setPatient({ ...patient, hla: e.target.value })} />
-        <input placeholder="Blood Group" onChange={e => setPatient({ ...patient, bloodGroup: e.target.value })} />
-        <input placeholder="Kidney Size" onChange={e => setPatient({ ...patient, kidneySize: e.target.value })} />
-        <input placeholder="PRA" onChange={e => setPatient({ ...patient, pra: e.target.value })} />
-        <input placeholder="Pincode" onChange={e => setPatient({ ...patient, pincode: e.target.value })} />
-        <button onClick={submitPatient} style={{ backgroundColor: patientSaved ? "#4CAF50" : "#1a73e8", color: "#fff" }}>
-          {patientSaved ? "✅ Patient Saved" : "Submit Patient"}
-        </button>
-      </div>
+        <div className="form-section">
+          <h3 className="section-heading">Patient Details</h3>
+          <input placeholder="Age" onChange={e => setPatient({ ...patient, age: e.target.value })} />
+          <input placeholder="HLA (comma-separated)" onChange={e => setPatient({ ...patient, hla: e.target.value })} />
+          <input placeholder="Blood Group" onChange={e => setPatient({ ...patient, bloodGroup: e.target.value })} />
+          <input placeholder="Kidney Size" onChange={e => setPatient({ ...patient, kidneySize: e.target.value })} />
+          <input placeholder="PRA" onChange={e => setPatient({ ...patient, pra: e.target.value })} />
+          <input placeholder="Pincode" onChange={e => setPatient({ ...patient, pincode: e.target.value })} />
+          <button
+            onClick={submitPatient}
+            style={{ backgroundColor: patientSaved ? "#4CAF50" : "#1a73e8", color: "#fff" }}
+          >
+            {patientSaved ? "✅ Patient Saved" : "Submit Patient"}
+          </button>
+        </div>
 
-      <div className="form-section">
-        <h3 className="section-heading">Run Matching</h3>
-        <button onClick={runMatch}>Run Match</button>
-        <p className="match-result">{matchResult}</p>
-        {score !== null && (
-          <p className="score">🔬 Compatibility Score: {score}</p>
-        )}
+        <div className="form-section">
+          <h3 className="section-heading">Run Matching</h3>
+          <button onClick={runMatch}>Run Match</button>
+          <p className="match-result">{matchResult}</p>
+          {score !== null && (
+            <p className="score">🔬 Compatibility Score: {score}</p>
+          )}
+        </div>
       </div>
     </div>
   );
