@@ -1,5 +1,5 @@
  Indian Kidney Exchange Program (IKEP)
-can check  ikep.tech
+
 A decentralized blockchain-based application for one-to-one kidney donor–recipient matching using smart contracts and a React.js frontend. It ensures fairness, medical accuracy, and transparency in transplant decision-making.
 
 🚀 Features
